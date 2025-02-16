@@ -52,6 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Alapértelmezés szerint a kezdőlap jelenik meg
     showSection('home');
+    // Év automatikus frissítése a láblécben
+    document.getElementById("year").textContent = new Date().getFullYear();
 
     // Üzenetküldés logika (Formspree API-hoz)
     document.getElementById('contact-form').addEventListener('submit', function(event) {
@@ -89,4 +91,3 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('contact-form').reset();
     });
 });
-document.getElementById("year").textContent = new Date().getFullYear();
