@@ -89,3 +89,4 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('contact-form').reset();
     });
 });
+document.getElementById("year").textContent = new Date().getFullYear();
