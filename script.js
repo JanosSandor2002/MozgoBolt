@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const homeLink = document.getElementById('home-link');
     const catalogLink = document.getElementById('catalog-link');
     const contactLink = document.getElementById('contact-link');
+    const sorsolasLink = document.getElementById('sorsolas-link');
 
     homeLink.addEventListener('click', () => showSection('home'));
     catalogLink.addEventListener('click', () => {
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loadProducts();
     });
     contactLink.addEventListener('click', () => showSection('contact'));
+    sorsolasLink.addEventListener('click', () => showSection('sorsolas'));
 
     function showSection(sectionId) {
         sections.forEach(section => {
@@ -90,4 +92,48 @@ document.addEventListener('DOMContentLoaded', () => {
         // Űrlap alaphelyzetbe állítása
         document.getElementById('contact-form').reset();
     });
+    // Sorsolás névlista kezelése localStorage-ból
+const addNameButton = document.getElementById('add-name-button');
+const drawButton = document.getElementById('draw-button');
+const nameInput = document.getElementById('single-name');
+const resultDisplay = document.getElementById('draw-result');
+const nameListDisplay = document.getElementById('name-list-display');
+
+// Névsor betöltése (ha van mentve korábbról)
+let names = JSON.parse(localStorage.getItem('names')) || [];
+renderNameList();
+
+// Hozzáadás gomb esemény
+addNameButton.addEventListener('click', () => {
+    const name = nameInput.value.trim();
+    if (name === '') return;
+
+    names.push(name);
+    localStorage.setItem('names', JSON.stringify(names));
+    nameInput.value = '';
+    renderNameList();
+});
+
+// Sorsolás gomb esemény
+drawButton.addEventListener('click', () => {
+    if (names.length === 0) {
+        resultDisplay.textContent = 'Nincs elérhető név.';
+        return;
+    }
+
+    const randomIndex = Math.floor(Math.random() * names.length);
+    const winner = names[randomIndex];
+    resultDisplay.textContent = `A kisorsolt név: ${winner} 🎉`;
+});
+
+// Lista megjelenítése
+function renderNameList() {
+    nameListDisplay.innerHTML = '';
+    names.forEach(name => {
+        const li = document.createElement('li');
+        li.textContent = name;
+        nameListDisplay.appendChild(li);
+    });
+}
+
 });

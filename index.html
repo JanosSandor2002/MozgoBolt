@@ -17,6 +17,7 @@
             <li><a href="#home" id="home-link">Főoldal</a></li>
             <li><a href="#catalog" id="catalog-link">Katalógus</a></li>
             <li><a href="#contact" id="contact-link">Kapcsolat</a></li>
+            <li><a href="#sorsolas" id="sorsolas-link">Sorsolás</a></li>
         </ul>
     </nav>
     <main id="main-content">
@@ -73,7 +74,22 @@
             </form>
         
             <p id="form-response" style="display:none;"></p>
-        </section>        
+        </section>
+        <section id="sorsolas" class="content-section" style="display: none;">
+            <h2>Sorsolás</h2>
+
+            <label for="single-name">Add meg a nevet:</label>
+            <input type="text" id="single-name" placeholder="Pl.: Kovács Anna">
+            <button id="add-name-button">Hozzáadás</button>
+
+            <hr>
+
+            <button id="draw-button">Sorsolás</button>
+            <p id="draw-result" style="font-weight: bold; font-size: 1.2em; margin-top: 10px;"></p>
+
+            <h3>Jelenlegi nevek:</h3>
+            <ul id="name-list-display"></ul>
+        </section>   
     </main>
     <footer>
         <p>&copy; <span id="year"></span> Online Bolt. Minden jog fenntartva.</p>
