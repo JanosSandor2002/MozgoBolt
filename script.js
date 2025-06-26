@@ -17,13 +17,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactLink = document.getElementById('contact-link');
     const sorsolasLink = document.getElementById('sorsolas-link');
 
-    homeLink.addEventListener('click', () => showSection('home'));
-    catalogLink.addEventListener('click', () => {
+    homeLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSection('home');
+    });
+    catalogLink.addEventListener('click', (e) => {
+        e.preventDefault();
         showSection('catalog');
         loadProducts();
     });
-    contactLink.addEventListener('click', () => showSection('contact'));
-    sorsolasLink.addEventListener('click', () => showSection('sorsolas'));
+    contactLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSection('contact');
+    });
+    sorsolasLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSection('sorsolas');
+    });
 
     function showSection(sectionId) {
         sections.forEach(section => {
