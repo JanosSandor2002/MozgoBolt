@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Bolt - Sorsolás</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Sorsolás</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Főoldal</a></li>
+          <li><a href="catalog.html">Katalógus</a></li>
+          <li><a href="contact.html">Kapcsolat</a></li>
+          <li><a href="sorsolas.html">Sorsolás</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <label for="single-name">Add meg a nevet:</label>
+      <input type="text" id="single-name" placeholder="Pl.: Kovács Anna" />
+      <button id="add-name-button">Hozzáadás</button>
+
+      <hr />
+
+      <button id="draw-button">Sorsolás</button>
+      <p
+        id="draw-result"
+        style="font-weight: bold; font-size: 1.2em; margin-top: 10px"
+      ></p>
+
+      <h3>Jelenlegi nevek:</h3>
+      <ul id="name-list-display"></ul>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Online Bolt. Minden jog fenntartva.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

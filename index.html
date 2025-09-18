@@ -1,99 +1,68 @@
 <!DOCTYPE html>
 <html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Bolt</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Bolt - Főoldal</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header>
-        <h1 class="special-effect">Üdvözöljük az Online Mozgó Boltunkban!</h1>
-        <img src="logo.png" alt="Bolt logó" id="header-image">
-    </header>
-       
-    <nav>
+      <nav>
         <ul>
-            <li><a href="#home" id="home-link">Főoldal</a></li>
-            <li><a href="#catalog" id="catalog-link">Katalógus</a></li>
-            <li><a href="#contact" id="contact-link">Kapcsolat</a></li>
-            <li><a href="#sorsolas" id="sorsolas-link">Sorsolás</a></li>
+          <li><a href="index.html">Főoldal</a></li>
+          <li><a href="catalog.html">Katalógus</a></li>
+          <li><a href="contact.html">Kapcsolat</a></li>
+          <li><a href="sorsolas.html">Sorsolás</a></li>
         </ul>
-    </nav>
-    <main id="main-content">
-        <section id="home" class="content-section">
-            <h2>Rólunk</h2>
-            <p>Üdvözöljük a Hernádvécsei Mozgó Boltban!<br>
-                <br>
-                Kedves Vásárlóink!<br>
-                <br>
-                Örömmel értesítjük Önöket, hogy megnyílt Hernádvécsén az új, mozgó boltunk, amely a környék <br>
-                minden lakója számára kényelmesen elérhetővé teszi a mindennapi szükségletek széles választékát. <br>
-                Boltunk célja, hogy olyan minőségi termékeket kínáljunk, amelyek mindenki számára elérhetőek, <br>
-                különösen azoknak, akik talán nem rendelkeznek a legnagyobb költségvetéssel.<br>
-                <br>
-                A Hernádvécse és környéke – Hernádpetri, Pusztaradvány, Fáj, Kércs, Szemere, Encs, Vizsoly, <br>
-                Novajidrány – településein élők számára kínálunk kényelmes, helyben elérhető vásárlási lehetőséget.<br>
-                Nálunk mindent megtalál, amire egy családnak szüksége lehet egy hétköznapi napon: édességek,<br> 
-                vegyes zöldség, háztartási cikkek, és még sok más termék, amelyek segítenek könnyebbé tenni az életét.<br>
-                <br>
-                A boltunk vegyeskereskedésként működik, és külön figyelmet fordítunk arra, hogy az áraink reálisak <br>
-                és megfizethetőek legyenek mindenki számára. Tudjuk, hogy a gazdasági helyzet nem mindenki<br> számára
-                könnyű, ezért arra törekszünk, hogy a lehető legjobb áron juttassuk el vásárlóinkhoz a legszükségesebb
-                termékeket. A szándékunk, hogy mindenki számára hozzáférhetővé tegyük a <br>
-                mindennapi alapvető cikkeket, miközben segítünk a környék közösségét is erősíteni.<br>
-                <br>
-                Bízunk benne, hogy boltunkkal hozzájárulunk a közösségünk fejlődéséhez és kényelméhez. <br>
-                Köszönjük, hogy bennünket választanak, és reméljük, hogy hamarosan személyesen is találkozhatunk!<br>
-                <br>
-                Tartsanak velünk, és fedezzék fel a mozgó boltunk kínálatát!<br>
-            </p>
-            <p style="text-align: right;">Sándor Patrik</p>
-        </section>
-        <section id="catalog" class="content-section" style="display: none;">
-            <h2>Termékkatalógus</h2>
-            <div class="product-container" id="product-container">
-                <!-- Termékek itt jelennek meg -->
-            </div>
-        </section>
-        <section id="contact" class="content-section" style="display: none;">
-            <h2>Kapcsolat</h2>
-            <p>Facebook oldal: <a href="https://www.facebook.com/profile.php?id=61558259091164" target="_blank">Part Bolt Facebook</a></p>
-        
-            <!-- Formspree integrációval -->
-            <form action="https://formspree.io/f/meoojgvr" method="POST" id="contact-form">
-                <label for="email">E-mail cím:</label>
-                <input type="email" id="email" name="email" required placeholder="Az Ön e-mail címe">
-        
-                <label for="message">Üzenet:</label>
-                <textarea id="message" name="message" rows="4" required placeholder="Az Ön üzenete"></textarea>
-        
-                <div class="button-container">
-                    <button type="submit">Küldés</button>
-                </div>
-            </form>
-        
-            <p id="form-response" style="display:none;"></p>
-        </section>
-        <section id="sorsolas" class="content-section" style="display: none;">
-            <h2>Sorsolás</h2>
+      </nav>
+      <h1 class="special-effect">Üdvözöljük az Online Mozgó Boltunkban!</h1>
+      <img src="logo.png" alt="Bolt logó" id="header-image" />
+    </header>
 
-            <label for="single-name">Add meg a nevet:</label>
-            <input type="text" id="single-name" placeholder="Pl.: Kovács Anna">
-            <button id="add-name-button">Hozzáadás</button>
-
-            <hr>
-
-            <button id="draw-button">Sorsolás</button>
-            <p id="draw-result" style="font-weight: bold; font-size: 1.2em; margin-top: 10px;"></p>
-
-            <h3>Jelenlegi nevek:</h3>
-            <ul id="name-list-display"></ul>
-        </section>   
+    <main>
+      <h2>Rólunk</h2>
+      <p>
+        Üdvözöljük a Hernádvécsei Mozgó Boltban!
+        <br />
+        <br />
+        Kedves Vásárlóink!
+        <br />
+        <br />
+        Örömmel értesítjük Önöket, hogy megnyílt Hernádvécsén az új, mozgó
+        boltunk, amely a környék minden lakója számára kényelmesen elérhetővé
+        teszi a mindennapi szükségletek széles választékát. Boltunk célja, hogy
+        olyan minőségi termékeket kínáljunk, amelyek mindenki számára
+        elérhetőek, különösen azoknak, akik talán nem rendelkeznek a legnagyobb
+        költségvetéssel.
+        <br />
+        A Hernádvécse és környéke – Hernádpetri , Pusztaradvány, Fáj, Kércs,
+        Szemere, Encs, Vizsoly, Novajidrány – településein élők számára kínálunk
+        kényelmes, helyben elérhető vásárlási lehetőséget. Nálunk mindent
+        megtalál, amire egy családnak szüksége lehet egy hétköznapi napon:
+        édességek, vegyes zöldség, háztartási cikkek, és még sok más termék,
+        amelyek segítenek könnyebbé tenni az életét.
+        <br />
+        A boltunk vegyeskereskedésként működik, és külön figyelmet fordítunk
+        arra, hogy az áraink reálisak és megfizethetőek legyenek mindenki
+        számára. Tudjuk, hogy a gazdasági helyzet nem mindenki számára könnyű,
+        ezért arra törekszünk, hogy a lehető legjobb áron juttassuk el
+        vásárlóinkhoz a legszükségesebb termékeket. A szándékunk, hogy mindenki
+        számára hozzáférhetővé tegyük a mindennapi alapvető cikkeket, miközben
+        segítünk a környék közösségét is erősíteni.
+        <br />
+        Bízunk benne, hogy boltunkkal hozzájárulunk a közösségünk fejlődéséhez
+        és kényelméhez. Köszönjük, hogy bennünket választanak, és reméljük, hogy
+        hamarosan személyesen is találkozhatunk!
+        <br />
+        Tartsanak velünk, és fedezzék fel a mozgó boltunk kínálatát!<br />
+      </p>
+      <p id="nev">Sándor Patrik</p>
     </main>
+
     <footer>
-        <p>&copy; <span id="year"></span> Online Bolt. Minden jog fenntartva.</p>
+      <p>&copy; <span id="year"></span> Online Bolt. Minden jog fenntartva.</p>
     </footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

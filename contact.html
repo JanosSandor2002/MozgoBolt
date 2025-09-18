@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Bolt - Kapcsolat</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Kapcsolat</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Főoldal</a></li>
+          <li><a href="catalog.html">Katalógus</a></li>
+          <li><a href="contact.html">Kapcsolat</a></li>
+          <li><a href="sorsolas.html">Sorsolás</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <p>
+        Facebook oldal:
+        <a
+          href="https://www.facebook.com/profile.php?id=61558259091164"
+          target="_blank"
+        >
+          Part Bolt Facebook
+        </a>
+      </p>
+
+      <form action="https://formspree.io/f/meoojgvr" method="POST">
+        <label for="email">E-mail cím:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="Az Ön e-mail címe"
+        />
+
+        <label for="message">Üzenet:</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          required
+          placeholder="Az Ön üzenete"
+        ></textarea>
+
+        <button type="submit">Küldés</button>
+      </form>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Online Bolt. Minden jog fenntartva.</p>
+    </footer>
+  </body>
+</html>
