@@ -162,3 +162,23 @@ form .button-container {
   gap: 10px;
   width: 100%;
 }
+#add-name-button {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  width: 200px;
+  height: 60px;
+}
+#draw-button {
+  font-size: 3rem;
+  width: 400px;
+  height: 90px;
+}
+#single-name {
+  font-size: 1rem;
+  width: 200px;
+  height: 60px;
+}
+#nevvaltoz {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}

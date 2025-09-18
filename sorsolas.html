@@ -8,7 +8,6 @@
   </head>
   <body>
     <header>
-      <h1>Sorsolás</h1>
       <nav>
         <ul>
           <li><a href="index.html">Főoldal</a></li>
@@ -17,16 +16,21 @@
           <li><a href="sorsolas.html">Sorsolás</a></li>
         </ul>
       </nav>
+      <h1 class="special-effect">Üdvözöljük az Online Mozgó Boltunkban!</h1>
+      <img src="logo.png" alt="Bolt logó" id="header-image" />
     </header>
 
     <main>
-      <label for="single-name">Add meg a nevet:</label>
-      <input type="text" id="single-name" placeholder="Pl.: Kovács Anna" />
-      <button id="add-name-button">Hozzáadás</button>
-
-      <hr />
-
-      <button id="draw-button">Sorsolás</button>
+      <div id="nevvaltoz">
+        <label for="single-name">Add meg a nevet</label>
+      </div>
+      <div>
+        <input type="text" id="single-name" placeholder="Pl.: Kovács Anna" />
+        <button id="add-name-button">Hozzáadás</button>
+      </div>
+      <div>
+        <button id="draw-button">Sorsolás</button>
+      </div>
       <p
         id="draw-result"
         style="font-weight: bold; font-size: 1.2em; margin-top: 10px"
