@@ -1,3 +1,4 @@
+let cheatingNum = 0;
 document.addEventListener('DOMContentLoaded', () => {
   // Év automatikus frissítése a láblécben
   const yearEl = document.getElementById('year');
@@ -107,9 +108,27 @@ document.addEventListener('DOMContentLoaded', () => {
         resultDisplay.textContent = 'Nincs elérhető név.';
         return;
       }
+      /*
       const randomIndex = Math.floor(Math.random() * names.length);
       const winner = names[randomIndex];
+      */
+      //cheating part
+      //egy személy
+      /*const winner = 'patrik';*/
+      //több személy
+      const cheatingArray = [
+        'Sándor imréné (Sándor viktória)',
+        'Ónodi Brendon',
+        'Adu Heléna',
+        'Kótai Fernándó',
+        'Horváth Szabolcs',
+      ];
+      let winner = cheatingArray[cheatingNum];
+
       resultDisplay.textContent = `A kisorsolt név: ${winner} 🎉`;
+      if (cheatingNum !== cheatingArray.length - 1) {
+        cheatingNum++;
+      }
     });
 
     function renderNameList() {
