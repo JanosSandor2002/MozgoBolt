@@ -1,4 +1,6 @@
 let cheatingNum = 0;
+let names;
+
 document.addEventListener('DOMContentLoaded', () => {
   // Év automatikus frissítése a láblécben
   const yearEl = document.getElementById('year');
@@ -21,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
       { id: 9, name: 'Szobi Kóla por', price: '100 Ft' },
     ];
 
-    // Termékek megjelenítése
     productContainer.innerHTML = '';
     products.forEach((product) => {
       const productDiv = document.createElement('div');
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, message }),
       })
-        .then(function (response) {
+        .then((response) => {
           if (response.ok) {
             responseEl.textContent = 'Az üzenet sikeresen elküldve!';
           } else {
@@ -63,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
           responseEl.style.display = 'block';
         })
-        .catch(function () {
+        .catch(() => {
           responseEl.textContent =
             'Hiba történt az üzenet küldésekor. Kérjük, próbálja újra később.';
           responseEl.style.display = 'block';
@@ -74,48 +75,31 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- SORSOLÁS OLDAL ---
-  const addNameButton = document.getElementById('add-name-button');
-  const drawButton = document.getElementById('draw-button');
-  const nameInput = document.getElementById('single-name');
-  const resultDisplay = document.getElementById('draw-result');
-  const nameListDisplay = document.getElementById('name-list-display');
+  fetch('./names.json')
+    .then((response) => response.json())
+    .then((data) => {
+      names = data.nevek; // JSON tömb
+      console.log(names);
 
-  if (
-    addNameButton &&
-    drawButton &&
-    nameInput &&
-    resultDisplay &&
-    nameListDisplay
-  ) {
-    // Névsor betöltése
-    let names = JSON.parse(localStorage.getItem('names')) || [];
-    renderNameList();
+      const drawButton = document.getElementById('draw-button');
+      const resultDisplay = document.getElementById('draw-result');
+      const nameListDisplay = document.getElementById('name-list-display');
 
-    // Hozzáadás gomb
-    addNameButton.addEventListener('click', () => {
-      const name = nameInput.value.trim();
-      if (name === '') return;
+      if (!drawButton || !resultDisplay || !nameListDisplay) return;
 
-      names.push(name);
-      localStorage.setItem('names', JSON.stringify(names));
-      nameInput.value = '';
-      renderNameList();
-    });
-
-    // Sorsolás gomb
-    drawButton.addEventListener('click', () => {
-      if (names.length === 0) {
-        resultDisplay.textContent = 'Nincs elérhető név.';
-        return;
+      // Lista render
+      function renderNameList() {
+        nameListDisplay.innerHTML = '';
+        names.forEach((name) => {
+          const li = document.createElement('li');
+          li.textContent = name;
+          nameListDisplay.appendChild(li);
+        });
       }
-      /*
-      const randomIndex = Math.floor(Math.random() * names.length);
-      const winner = names[randomIndex];
-      */
-      //cheating part
-      //egy személy
-      /*const winner = 'patrik';*/
-      //több személy
+
+      renderNameList(); // kezdeti lista
+
+      // Cheating tömb
       const cheatingArray = [
         'Sándor imréné (Sándor viktória)',
         'Ónodi Brendon',
@@ -123,21 +107,24 @@ document.addEventListener('DOMContentLoaded', () => {
         'Kótai Fernándó',
         'Horváth Szabolcs',
       ];
-      let winner = cheatingArray[cheatingNum];
 
-      resultDisplay.textContent = `A kisorsolt név: ${winner} 🎉`;
-      if (cheatingNum !== cheatingArray.length - 1) {
-        cheatingNum++;
-      }
-    });
+      drawButton.addEventListener('click', () => {
+        if (names.length === 0) {
+          resultDisplay.textContent = 'Nincs elérhető név.';
+          return;
+        }
 
-    function renderNameList() {
-      nameListDisplay.innerHTML = '';
-      names.forEach((name) => {
-        const li = document.createElement('li');
-        li.textContent = name;
-        nameListDisplay.appendChild(li);
+        // Ha van még a cheatingArray-ból, abból vesszük, egyébként random név
+        let winner =
+          cheatingArray[cheatingNum] ||
+          names[Math.floor(Math.random() * names.length)];
+
+        resultDisplay.textContent = `A kisorsolt név: ${winner} 🎉`;
+
+        if (cheatingNum < cheatingArray.length - 1) {
+          cheatingNum++;
+        }
       });
-    }
-  }
+    })
+    .catch((error) => console.error('Hiba a JSON betöltésekor:', error));
 });
