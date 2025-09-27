@@ -113,12 +113,16 @@ document.addEventListener('DOMContentLoaded', () => {
           resultDisplay.textContent = 'Nincs elérhető név.';
           return;
         }
+        //non cheat
 
-        // Ha van még a cheatingArray-ból, abból vesszük, egyébként random név
+        let winner = names[Math.floor(Math.random() * names.length)];
+
+        // Cheat
+        /*
         let winner =
           cheatingArray[cheatingNum] ||
           names[Math.floor(Math.random() * names.length)];
-
+        */
         resultDisplay.textContent = `A kisorsolt név: ${winner} 🎉`;
 
         if (cheatingNum < cheatingArray.length - 1) {
