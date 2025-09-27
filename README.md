@@ -18,11 +18,7 @@ Ide kerülnek:
 
 ## Kapcsolat
 
-Amennyiben kapcsolatba szeretnél lépni a Part Bolttal, az alábbi lehetőségek állnak rendelkezésedre:
-
-- **Email:** info@partbolt.hu
-- **Telefon:** +36 XX XXX XXXX
-- **Helyszín:** Mozgó bolt – aktuális útvonalat a hírekben és közösségi médián tesszük közzé
+Amennyiben kapcsolatba szeretnél lépni a Part Bolttal, a lehetőségeket megtalálod a weboldalunkon.
 
 ## Sorsolás
 
